@@ -36,14 +36,14 @@ namespace Students_OOP_Fall2019
         {
             StreamWriter outFile = new StreamWriter("grades_by_class.txt");
 
-            string currentClass = myStudents[0].GetUndergradClass();
+            string currentClass = myStudents[0].GetClassRank();
             int count = 1;
             double totalGrade = myStudents[0].GetGrade();
             double avgGrade;
 
             for (int i = 1; i < Student.GetCount(); i++)
             {
-                if (myStudents[i].GetUndergradClass() == currentClass)
+                if (myStudents[i].GetClassRank() == currentClass)
                 {
                     count++;
                     totalGrade += myStudents[i].GetGrade();
@@ -54,7 +54,7 @@ namespace Students_OOP_Fall2019
                     Console.WriteLine("There are " + count + " " + currentClass + "s and their average grade is " + avgGrade);
                     outFile.WriteLine("There are " + count + " " + currentClass + "s and their average grade is " + avgGrade);
 
-                    currentClass = myStudents[i].GetUndergradClass();
+                    currentClass = myStudents[i].GetClassRank();
                     count = 1;
                     totalGrade = myStudents[i].GetGrade();
                 }

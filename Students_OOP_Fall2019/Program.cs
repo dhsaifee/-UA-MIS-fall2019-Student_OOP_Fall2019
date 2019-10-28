@@ -37,7 +37,7 @@ namespace Students_OOP_Fall2019
                 }
                 else
                 {
-                    Console.WriteLine(nameToFind + " is a " + myStudents[foundIndex].GetUndergradClass() +
+                    Console.WriteLine(nameToFind + " is a " + myStudents[foundIndex].GetClassRank() +
                         " and has a grade: " + myStudents[foundIndex].GetGrade());
                 }
 

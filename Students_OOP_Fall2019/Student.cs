@@ -8,15 +8,15 @@ namespace Students_OOP_Fall2019
     class Student
     {
         private string name;
-        private string undergradClass;
+        private string classRank;
         private int grade;
         private static int count;
 
 
-        public Student(string name, string undergradClass, int grade)
+        public Student(string name, string classRank, int grade)
         {
             this.name = name;
-            this.undergradClass = undergradClass;
+            this.classRank = classRank;
             this.grade = grade; ;
         }
 
@@ -37,14 +37,14 @@ namespace Students_OOP_Fall2019
         }
 
 
-        public string GetUndergradClass()
+        public string GetClassRank()
         {
-            return undergradClass;
+            return classRank;
         }
 
-        public void SetUndergradClass(string undergradClass)
+        public void SetClassRank(string classRank)
         {
-            this.undergradClass = undergradClass;
+            this.classRank = classRank;
         }
 
 
@@ -77,7 +77,13 @@ namespace Students_OOP_Fall2019
 
         public override string ToString()
         {
-            return name + "\t" + undergradClass + "\t\t" + grade;
+            return name + "\t" + classRank + "\t\t" + grade;
+        }
+
+
+        public int CompareTo(Student myStudent)
+        {
+            return name.CompareTo(myStudent.GetName());
         }
 
 
@@ -117,7 +123,7 @@ namespace Students_OOP_Fall2019
 
                 for (int j = i + 1; j < GetCount(); j++)
                 {
-                    if (myStudents[j].GetUndergradClass().CompareTo(myStudents[minIndex].GetUndergradClass()) < 0)
+                    if (myStudents[j].GetClassRank().CompareTo(myStudents[minIndex].GetClassRank()) < 0)
                     {
                         minIndex = j;
                     }
@@ -149,7 +155,7 @@ namespace Students_OOP_Fall2019
 
                 for (int j = i + 1; j < GetCount(); j++)
                 {
-                    if (myStudents[j].GetName().CompareTo(myStudents[minIndex].GetName()) < 0)
+                    if (myStudents[j].CompareTo(myStudents[minIndex]) < 0)
                     {
                         minIndex = j;
                     }
